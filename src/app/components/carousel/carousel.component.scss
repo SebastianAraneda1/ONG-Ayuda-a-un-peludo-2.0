@@ -1,0 +1,15 @@
+.carousel{
+    margin: 1rem auto;
+    height: 35rem;
+    width: 65rem;
+    .carousel-item{
+        img{
+            border: 5vh solid rgb(102, 62, 1);
+            height: 35rem;
+            width: 65rem;
+        }
+    }
+    span{
+        color: black;
+    }
+}

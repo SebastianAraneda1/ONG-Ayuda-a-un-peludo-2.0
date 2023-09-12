@@ -1,0 +1,35 @@
+p, h2{
+    color: wheat;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.imageGatos{
+    width: 40vh;
+}
+
+/*.card{
+    color: rgb(102, 62, 1) !important;
+}*/
+.card {
+    width: 100vh;
+    border: 1px solid #75611d;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #311606;
+    background-color: #75611d;
+  }
+  
+  .card-header {
+    padding: 10px;
+    background-color: #553b18;
+    text-align: center;
+  }
+  
+  .card-body {
+    padding: 10px;
+  }
+  
+  .card-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
