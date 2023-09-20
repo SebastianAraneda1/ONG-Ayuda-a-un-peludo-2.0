@@ -46,19 +46,25 @@ module.exports = function (){
             id: 1,
             nombre: "Ralfi",
             genero: "Macho",
-            raza: "Pastor aleman"
+            raza: "Pastor aleman",
+            urlImg: "https://previews.123rf.com/images/sergeyussr/sergeyussr1109/sergeyussr110900154/10580215-cachorro-de-perro-pastor-alem%C3%A1n-la-edad-de-4-meses.jpg",
+            descripcion: "Ralfi es un perro muy responsable, poco juguetón pero siempre esta pendiente del cuidado de sus dueños"
         },
         {
             id: 2,
             nombre: "Max",
             genero: "Macho",
-            raza: "Salchica"
+            raza: "Salchica",
+            urlImg: "https://www.nombresdeperros.eu/wp-content/uploads/2019/04/perro-salchicha-colornegro.jpg",
+            descripcion: "Max es un perro cariñoso, es muy tierno con todos los que le rodean y nunca busca hacer daño"
         },
         {
             id: 3,
             nombre: "Canela",
             genero: "hembra",
-            raza: "Labrador"
+            raza: "Labrador",
+            urlImg: "https://t1.ea.ltmcdn.com/es/posts/3/7/7/nombres_para_perritas_labrador_20773_2_600.jpg",
+            descripcion: "Canela es una cachorra bien servicial y muy juguetona, le gusta explorar y sabe guíar a personas ciegas"
         }
         ]		
     }
