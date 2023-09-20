@@ -1,6 +1,22 @@
-p, h2{
+.titulo{
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.parrafo{
+  color: rgb(30, 45, 46);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2{
     color: wheat;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h5, p{
+  color: #eef3a7;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .imageGatos{
@@ -14,13 +30,16 @@ p, h2{
     width: 100vh;
     border: 1px solid #75611d;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px #311606;
-    background-color: #75611d;
+    box-shadow: 2px 2px 5px #2e3106;
+    background-image: url("../../../assets/images/fondo_adopcion.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
   }
   
   .card-header {
     padding: 10px;
-    background-color: #553b18;
+    background-color: #504126;
     text-align: center;
   }
   
@@ -32,4 +51,17 @@ p, h2{
     padding: 10px;
     display: flex;
     justify-content: flex-end;
+  }
+
+  .imageGatos{
+    border-radius: 5vh;
+    border: 3px solid;
+  }
+  
+  .contenido{
+    background-color:#504126;
+    .info{
+      margin-left: 4vh;
+    } 
+    border-radius: 20px;
   }

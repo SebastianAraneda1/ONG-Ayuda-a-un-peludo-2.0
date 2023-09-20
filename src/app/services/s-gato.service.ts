@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Gato } from '../gato';
+import { Gato } from '../interfaces/gato';
 import { map } from 'rxjs/operators';
  
 @Injectable({

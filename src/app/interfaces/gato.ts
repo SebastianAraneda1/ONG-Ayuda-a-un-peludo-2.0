@@ -4,4 +4,5 @@ export interface Gato {
     genero: string;
     raza: string;
     urlImg:string;
+    descripcion:string;
 }

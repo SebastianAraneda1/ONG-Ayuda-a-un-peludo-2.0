@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SGatoService } from 'src/app/services/s-gato.service';
-import { Gato } from '../../gato'
+import { Gato } from '../../interfaces/gato'
 
 @Component({
   selector: 'app-gatos',

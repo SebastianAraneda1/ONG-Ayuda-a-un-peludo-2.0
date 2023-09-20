@@ -1,6 +1,8 @@
+<h1 class="titulo">Adopta a un Gato!!</h1>
+<h3 class="parrafo">Nuestros gatos buscan un dueño que les cuide, puedes visualizar su género, raza y un breve descripción de ellos, si te convence alguno Adoptalo!!</h3>
 
-<div *ngFor="let gato of gatos" class="container card mt-5">
-  
+<div *ngFor="let gato of gatos" class="container card mt-5 mb-5">
+  <p>N°{{gato.id}}</p>
   <div class="card-header">
     <h2>{{gato.nombre}}</h2>
   </div>
@@ -10,10 +12,10 @@
 
       <img class="imageGatos" src={{gato.urlImg}}>
       
-      <div style="margin-left: 10px;">
-
-        <p>{{gato.genero}}</p>
-        <p>{{gato.raza}}</p>
+      <div class="contenido" style="margin-left: 10px;">
+        <p class="info">{{gato.descripcion}}</p>
+        <h5 class="info">Género: {{gato.genero}}</h5>
+        <h5 class="info">Raza: {{gato.raza}}</h5>
 
       </div>
 
@@ -21,7 +23,7 @@
 
   </div>
   <div class="card-footer">
-    <h4>Footer</h4>
+    <button type="button">Adoptar</button>
   </div>
 
 </div>
