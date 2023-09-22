@@ -10,14 +10,16 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { PerrosComponent } from './components/perros/perros.component';
 import { GatosComponent } from './components/gatos/gatos.component';
 import { FormAdopcionComponent } from './components/form-adopcion/form-adopcion.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
+  {path: 'login', component: LoginComponent},
   {path: 'inicio', component: InicioComponent},
   {path: 'perros', component: PerrosComponent},
   {path: 'gatos', component: GatosComponent},
   {path: 'modal', component: FormAdopcionComponent},
-  {path: '', component: InicioComponent, pathMatch: 'full'},
-  {path: '**', redirectTo: 'inicio', pathMatch: 'full'}
+  {path: '', component: LoginComponent, pathMatch: 'full'},
+  {path: '**', redirectTo: 'login', pathMatch: 'full'}
 
 ]
 
@@ -29,7 +31,8 @@ const routes: Routes = [
     CarouselComponent,
     PerrosComponent,
     GatosComponent,
-    FormAdopcionComponent
+    FormAdopcionComponent,
+    LoginComponent
   ],
 
   imports: [
