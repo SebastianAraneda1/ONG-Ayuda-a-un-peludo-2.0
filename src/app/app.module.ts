@@ -11,6 +11,7 @@ import { PerrosComponent } from './components/perros/perros.component';
 import { GatosComponent } from './components/gatos/gatos.component';
 import { FormAdopcionComponent } from './components/form-adopcion/form-adopcion.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 const routes: Routes = [
   {path: 'inicio', component: InicioComponent},
@@ -31,7 +32,8 @@ const routes: Routes = [
     PerrosComponent,
     GatosComponent,
     FormAdopcionComponent,
-    LoginComponent
+    LoginComponent,
+    RegistroComponent
   ],
 
   imports: [
