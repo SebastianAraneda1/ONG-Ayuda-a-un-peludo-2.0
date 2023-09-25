@@ -1,16 +1,5 @@
-<title>Hola, por favor ingrese</title>
-<form>
-  <div class="container">
-    <label>Ingrese usuario:</label>
-    <input type="text">
-    <br>
-    <label>Ingrese contraseña:</label>
-    <input type="number">
-  </div>
-</form>
-
-
-<div>
-  <app-encabezado></app-encabezado>
-  <router-outlet></router-outlet>
-</div>
+<app-login></app-login>
+<ng-template #contenido>
+    <app-encabezado></app-encabezado>
+    <router-outlet></router-outlet>
+</ng-template>

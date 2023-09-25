@@ -1,6 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -13,13 +13,12 @@ import { FormAdopcionComponent } from './components/form-adopcion/form-adopcion.
 import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent},
   {path: 'inicio', component: InicioComponent},
   {path: 'perros', component: PerrosComponent},
   {path: 'gatos', component: GatosComponent},
   {path: 'modal', component: FormAdopcionComponent},
-  {path: '', component: LoginComponent, pathMatch: 'full'},
-  {path: '**', redirectTo: 'login', pathMatch: 'full'}
+  {path: '', component: InicioComponent, pathMatch: 'full'},
+  {path: '**', redirectTo: 'inicio', pathMatch: 'full'}
 
 ]
 
@@ -38,7 +37,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

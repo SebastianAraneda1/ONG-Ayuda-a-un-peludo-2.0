@@ -3,14 +3,16 @@ module.exports = function (){
         cuenta_user:[
             {
                 nombre: "alan",
-                contraseña: "1234a"
+                contraseña: "1234a",
+                email: "alan@user.com"
             }
         ],
     
         cuenta_admin:[
             {
                 nombre: "leno",
-                contraseña: "abcd"
+                contraseña: "abcd",
+                email: "leno@admin.com"
             }
         ],
     
