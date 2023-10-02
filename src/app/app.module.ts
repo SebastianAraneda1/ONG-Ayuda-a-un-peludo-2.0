@@ -12,6 +12,7 @@ import { GatosComponent } from './components/gatos/gatos.component';
 import { FormAdopcionComponent } from './components/form-adopcion/form-adopcion.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path: 'inicio', component: InicioComponent},
@@ -40,8 +41,9 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,18 +1,17 @@
 module.exports = function (){
     var data = {
-        cuenta_user:[
+        usuarios:[
             {
                 nombre: "alan",
-                contraseña: "1234a",
-                email: "alan@user.com"
-            }
-        ],
-    
-        cuenta_admin:[
+                contrasena: "1234a",
+                email: "alan@user.com",
+                rol:"user"
+            },
             {
                 nombre: "leno",
-                contraseña: "abcd",
-                email: "leno@admin.com"
+                contrasena: "abcd",
+                email: "leno@admin.com",
+                rol:"admin"
             }
         ],
     
