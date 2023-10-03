@@ -1,5 +1,8 @@
-<h1 class="titulo">Adopta a un Perro!!</h1>
-<h3 class="parrafo">Nuestros perros buscan un dueño que les cuide, puedes visualizar su género, raza y un breve descripción de ellos, si te convence alguno Adoptalo!!</h3>
+<h1 class="titulo" *ngIf="botonesPerro">Adopta a un Perro!!</h1>
+<h3 class="parrafo" *ngIf="botonesPerro">Nuestros perros buscan un dueño que les cuide, puedes visualizar su género, raza y un breve descripción de ellos, si te convence alguno Adoptalo!!</h3>
+
+<h1 class="titulo" *ngIf="!botonesPerro">Pagina de perros</h1>
+<h3 class="parrafo" *ngIf="!botonesPerro">Bienvenido administrador, a continuación podra modificar, eliminar o agregar un perro</h3>
 
 <div *ngFor="let perro of perros" class="container card mt-5 mb-5">
   <p>N°{{perro.id}}</p>
@@ -23,8 +26,14 @@
 
   </div>
   <div class="card-footer">
-    <button type="button">Adoptar</button>
-    <button type="button">eliminar</button>
+    <button class="btn btn-success boton" type="button" *ngIf="botonesPerro">Adoptar</button>
+    <button class="btn btn-info boton" type="button" *ngIf="!botonesPerro">Modificar</button>
+    <button class="btn btn-danger boton" type="button" *ngIf="!botonesPerro">Eliminar</button>
   </div>
+</div>
 
+<div class="container card mt-3 mb-3" style="text-align: center;" *ngIf="!botonesPerro">
+  <div class="card-body">
+    <button class="btn btn-info boton" shape="block">Agregar Cachorro</button>
+  </div>
 </div>

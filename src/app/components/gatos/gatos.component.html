@@ -1,5 +1,7 @@
-<h1 class="titulo">Adopta a un Gato!!</h1>
-<h3 class="parrafo">Nuestros gatos buscan un dueño que les cuide, puedes visualizar su género, raza y un breve descripción de ellos, si te convence alguno Adoptalo!!</h3>
+<h1 class="titulo" *ngIf="botonesGato">Adopta a un Gato!!</h1>
+<h3 class="parrafo" *ngIf="botonesGato">Nuestros gatos buscan un dueño que les cuide, puedes visualizar su género, raza y un breve descripción de ellos, si te convence alguno Adoptalo!!</h3>
+<h1 class="titulo" *ngIf="!botonesGato">Pagina de gatos</h1>
+<h3 class="titulo" *ngIf="!botonesGato">Bienvenido administrador, a continuación podra modificar, eliminar o agregar un gato</h3>
 
 <div *ngFor="let gato of gatos" class="container card mt-5 mb-5">
   <p>N°{{gato.id}}</p>
@@ -23,7 +25,14 @@
 
   </div>
   <div class="card-footer">
-    <button type="button">Adoptar</button>
+    <button class="btn btn-success boton" type="button" *ngIf="botonesGato">Adoptar</button>
+    <button class="btn btn-info boton" type="button" *ngIf="!botonesGato">Modificar</button>
+    <button class="btn btn-danger boton" type="button" *ngIf="!botonesGato">Eliminar</button>
   </div>
+</div>
 
+<div class="container card mt-3 mb-3" style="text-align: center;" *ngIf="!botonesGato">
+  <div class="card-body">
+    <button class="btn btn-info boton" shape="block">Agregar minino</button>
+  </div>
 </div>

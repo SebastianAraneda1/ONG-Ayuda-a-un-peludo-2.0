@@ -17,6 +17,12 @@
           <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" [routerLink]="['/gatos']" tabindex="-1" aria-disabled="true">Adoptar gatos</a>
           </li>
+          <li class="nav-item">
+            <h4 class="perfil" tabindex="-1" aria-disabled="true">Bienvenido {{nombre}}</h4>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-danger boton" (click)="cerrarSesion()">Cerrar sesión</button>
+          </li>
         </ul>
       </div>
     </div>
