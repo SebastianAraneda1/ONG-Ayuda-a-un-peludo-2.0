@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UsuarioInterface } from 'src/app/interfaces/usuario.interface';
 import { UsuarioService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent {
   listaUsuarios = new Array<UsuarioInterface>();
   existe = false;
 
-  constructor(private userService:UsuarioService) {}
+  constructor(private userService:UsuarioService, private route:Router) {}
 
   ingreso(){
 
@@ -31,6 +32,7 @@ export class LoginComponent {
             console.log("Existe");
             this.userService.usuario = usuario;
             this.userService.setLogStatus(true);
+            this.route.navigate(['/inicio'])
           }
 
         });
