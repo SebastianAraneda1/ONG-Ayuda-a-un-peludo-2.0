@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { SPerroService } from 'src/app/services/s-perro.service';
 import { Perro } from '../../interfaces/perro'
 import { UsuarioService } from 'src/app/services/user.service';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ModalAgregarComponent } from '../modal-agregar/modal-agregar.component';
 
 @Component({
   selector: 'app-perros',
@@ -13,7 +15,13 @@ export class PerrosComponent {
   perros: Array<Perro> = new Array<Perro>();
   botonesPerro:boolean = false;
 
-  constructor(private perroService: SPerroService, private usuarioService:UsuarioService) {}
+  modalRef!: BsModalRef;
+
+  constructor(
+    private perroService: SPerroService, 
+    private usuarioService:UsuarioService, 
+    public modalService:BsModalService
+    ) {}
   
   ngOnInit(): void {
     this.perroService.getPerros().subscribe((perro)=> (this.perros = perro));
@@ -23,6 +31,13 @@ export class PerrosComponent {
     if(this.usuarioService.usuario.rol == 'admin'){
       this.botonesPerro = false;
     }
+  }
+
+  displayStyle = "none";
+  
+  openPopup() {
+   // this.displayStyle = "block";
+   this.modalRef = this.modalService.show(ModalAgregarComponent);
   }
 
 }

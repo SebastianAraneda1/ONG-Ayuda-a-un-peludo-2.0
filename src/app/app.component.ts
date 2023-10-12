@@ -19,4 +19,12 @@ export class AppComponent implements OnInit{
       console.log(this.userService.usuario);
     });
   }
+  displayStyle = "none";
+  
+  openPopup() {
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";
+  }
 }

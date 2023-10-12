@@ -13,6 +13,8 @@ import { FormAdopcionComponent } from './components/form-adopcion/form-adopcion.
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { FormsModule } from '@angular/forms';
+import { ModalAgregarComponent } from './components/modal-agregar/modal-agregar.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 const routes: Routes = [
   {path: 'inicio', component: InicioComponent},
@@ -34,14 +36,16 @@ const routes: Routes = [
     GatosComponent,
     FormAdopcionComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    ModalAgregarComponent,
   ],
 
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
