@@ -32,7 +32,7 @@ export class LoginComponent {
             console.log("Existe");
             this.userService.usuario = usuario;
             this.userService.setLogStatus(true);
-            this.route.navigate(['/inicio'])
+            this.route.navigate(['/inicio']);
           }
 
         });

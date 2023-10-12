@@ -1,6 +1,8 @@
 body{
     background-image: url('./assets/images/Fondo.jpg');
-    background-repeat: round no-repeat;
-    background-size: 100% 100vh cover;
+    background-repeat: round;
+    background-size: 100% cover;
     background-attachment: fixed;
 }
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
