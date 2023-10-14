@@ -15,4 +15,9 @@ export class SPerroService {
   getPerros(): Observable<Array<Perro>> {
     return this.http.get<Array<Perro>>(this.apiUrl).pipe(map(response => response));
   }
+
+  createPerro(post:Perro){
+    return this.http.post(this.apiUrl, post);
+  }
+
 }

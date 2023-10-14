@@ -18,6 +18,7 @@ module.exports = function (){
         gatos: [
         {
             id: 1,
+            tipo: "gato",
             nombre: "Luna",
             genero: "Hembra",
             raza: "Mestiza",
@@ -26,6 +27,7 @@ module.exports = function (){
         },
         {
             id: 2,
+            tipo: "gato",
             nombre: "Sol",
             genero: "Macho",
             raza: "Egipcio",
@@ -34,6 +36,7 @@ module.exports = function (){
         },
         {
             id: 3,
+            tipo: "gato",
             nombre: "Mania",
             genero: "Hembra",
             raza: "Mestiza",
@@ -45,6 +48,7 @@ module.exports = function (){
         perros:[
         {
             id: 1,
+            tipo: "perro",
             nombre: "Ralfi",
             genero: "Macho",
             raza: "Pastor aleman",
@@ -53,6 +57,7 @@ module.exports = function (){
         },
         {
             id: 2,
+            tipo: "perro",
             nombre: "Max",
             genero: "Macho",
             raza: "Salchica",
@@ -61,6 +66,7 @@ module.exports = function (){
         },
         {
             id: 3,
+            tipo: "perro",
             nombre: "Canela",
             genero: "hembra",
             raza: "Labrador",

@@ -1,5 +1,6 @@
 export interface Perro {
     id?: number;
+    tipo: string;
     nombre: string;
     genero: string;
     raza: string;

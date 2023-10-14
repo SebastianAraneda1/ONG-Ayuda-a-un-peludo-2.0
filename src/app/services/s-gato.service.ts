@@ -15,4 +15,9 @@ export class SGatoService {
   getGatos(): Observable<Array<Gato>> {
     return this.http.get<Array<Gato>>(this.apiUrl).pipe(map(response => response));
   }
+
+  createGato(post:Gato){
+    return this.http.post(this.apiUrl, post);
+  }
+
 }
