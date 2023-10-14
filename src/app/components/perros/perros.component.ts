@@ -35,7 +35,7 @@ export class PerrosComponent {
 
   displayStyle = "none";
   
-  openPopup() {
+  abrirModal() {
    // this.displayStyle = "block";
    this.modalRef = this.modalService.show(ModalAgregarComponent);
   }

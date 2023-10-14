@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SGatoService } from 'src/app/services/s-gato.service';
 import { Gato } from '../../interfaces/gato'
 import { UsuarioService } from 'src/app/services/user.service';
+import { ModalAgregarComponent } from '../modal-agregar/modal-agregar.component';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-gatos',
@@ -13,8 +15,13 @@ export class GatosComponent implements OnInit{
   gatos: Array<Gato> = new Array<Gato>();
   botonesGato:boolean = false;
 
-  constructor(private gatoService: SGatoService
-              , private usuarioService:UsuarioService) {}
+  modalRef!: BsModalRef;
+
+  constructor(
+      private gatoService: SGatoService,
+      private usuarioService:UsuarioService,
+      public modalService:BsModalService
+    ) {}
   
   ngOnInit(): void {
     this.gatoService.getGatos().subscribe((gato)=> (this.gatos = gato));
@@ -25,6 +32,13 @@ export class GatosComponent implements OnInit{
     if(this.usuarioService.usuario.rol == 'admin'){
       this.botonesGato = false;
     }
+  }
+
+  displayStyle = "none";
+  
+  abrirModal() {
+   // this.displayStyle = "block";
+   this.modalRef = this.modalService.show(ModalAgregarComponent);
   }
   
 }
