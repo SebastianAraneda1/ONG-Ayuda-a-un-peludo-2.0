@@ -6,6 +6,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ModalAgregarComponent } from '../modal-agregar/modal-agregar.component';
 import { ModalEliminarComponent } from '../modal-eliminar/modal-eliminar.component';
 import { ModalActualizarComponent } from '../modal-actualizar/modal-actualizar.component';
+import { ModalAdoptarComponent } from '../modal-adoptar/modal-adoptar.component';
 
 @Component({
   selector: 'app-perros',
@@ -43,12 +44,17 @@ export class PerrosComponent {
   }
 
   abrirModalActualizar(perro: Perro){
-    this.perroService.perron = perro
+    this.perroService.perron = perro;
     this.modalRef = this.modalService.show(ModalActualizarComponent);
   }
 
   abrirModalEliminar(){
     this.modalRef = this.modalService.show(ModalEliminarComponent);
+  }
+
+  abrirModalAdoptar(perro: Perro){
+    this.perroService.perron = perro;
+    this.modalRef = this.modalService.show(ModalAdoptarComponent);
   }
 
 }

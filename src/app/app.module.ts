@@ -19,6 +19,7 @@ import { ModalEliminarComponent } from './components/modal-eliminar/modal-elimin
 import { AuthGuardService } from './guard/auth-guard';
 import { ModalActualizarComponent } from './components/modal-actualizar/modal-actualizar.component';
 import { OlvideContrasenaComponent } from './components/olvide-contrasena/olvide-contrasena.component';
+import { ModalAdoptarComponent } from './components/modal-adoptar/modal-adoptar.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -47,7 +48,8 @@ const routes: Routes = [
     ModalAgregarComponent,
     ModalEliminarComponent,
     ModalActualizarComponent,
-    OlvideContrasenaComponent
+    OlvideContrasenaComponent,
+    ModalAdoptarComponent
   ],
 
   imports: [
