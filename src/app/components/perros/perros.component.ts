@@ -4,6 +4,7 @@ import { Perro } from '../../interfaces/perro'
 import { UsuarioService } from 'src/app/services/user.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ModalAgregarComponent } from '../modal-agregar/modal-agregar.component';
+import { ModalEliminarComponent } from '../modal-eliminar/modal-eliminar.component';
 
 @Component({
   selector: 'app-perros',
@@ -38,6 +39,11 @@ export class PerrosComponent {
   abrirModal() {
    // this.displayStyle = "block";
    this.modalRef = this.modalService.show(ModalAgregarComponent);
+  }
+
+  abrirModalEliminar(perro: Perro){
+    this.perroService.perron = perro;
+    this.modalRef = this.modalService.show(ModalEliminarComponent);
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/user.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class EncabezadoComponent {
 
   nombre:string = "";
 
-  constructor(private usuarioService:UsuarioService){}
+  constructor(private usuarioService:UsuarioService, private route:Router){}
 
   ngOnInit():void{
     if(this.usuarioService.usuario.rol == 'user'){
@@ -23,6 +24,7 @@ export class EncabezadoComponent {
 
   cerrarSesion(){
     this.usuarioService.setLogStatus(false);
+    this.route.navigate(['/'])
   }
 
 }
