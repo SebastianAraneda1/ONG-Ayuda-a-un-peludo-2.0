@@ -1,1 +1,42 @@
-<p>registro works!</p>
+<div class="container formulario" >
+  <div class="row">
+    <div class="col-6">
+      <h1 class="mt-5 titulo">Registrarse</h1>
+      <h3 class="mb-5 titulo">Por favor registrate para comenzar a adoptar mascotas!!</h3>
+    </div>
+
+    <div class="col-6">
+
+      <div class="form-floating mb-3 mt-3">
+        <input [(ngModel)]="formRegistro.user" type="text" class="form-control" id="floatingUser" placeholder="Usuario">
+        <label for="floatingUser" class="texto">Usuario</label>
+        <span *ngIf="showErrorUser" style="color: red;">Usuario invalido</span>
+      </div>
+
+      <div class="form-floating mb-3 mt-3">
+        <input [(ngModel)]="formRegistro.email" type="email" class="form-control" id="floatingEmail" placeholder="Email">
+        <label for="floatingEmail" class="texto">Email</label>
+        <span *ngIf="showErrorEmail" style="color: red;">Email invalido</span>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input [(ngModel)]="formRegistro.pass" type="password" class="form-control" id="floatingPass" placeholder="Contraseña">
+        <label for="floatingPass" class="texto">Contraseña</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input [(ngModel)]="formRegistro.rPass" type="password" class="form-control" id="floatingRPass" placeholder="Repetir Contraseña">
+        <label for="floatingRPass" class="texto">Repetir Contraseña</label>
+        <span *ngIf="showErrorPass" style="color: red;">Las contraseñas no coinciden</span>
+      </div>
+
+      <div class="mb-3 form-check">
+        <input type="checkbox" [(ngModel)]="acuerdo" class="form-check-input" id="exampleCheck1">Acepto terminos y condiciones
+      </div>
+
+      <button type="button" (click)="registrar()" [disabled]="!acuerdo" class="btn mb-2">Registrarse</button>
+      <br>
+      <a [routerLink]="['/login']" class="mb-3">Volver</a>
+
+  </div>
+</div>

@@ -10,7 +10,8 @@ import { BehaviorSubject, Observable, map } from 'rxjs';
 export class UsuarioService{
     private apiUrl = 'http://localhost:3000/usuarios';
 
-    usuarioLog = new BehaviorSubject<boolean>(false); 
+    usuarioLog = new BehaviorSubject<boolean>(false);
+    logStatus = false;
     
     usuario = new UsuarioInterface();
 
@@ -22,6 +23,7 @@ export class UsuarioService{
     }
 
     setLogStatus(status:boolean):void{
+        this.logStatus = status;
         this.usuarioLog.next(status);
     }
     

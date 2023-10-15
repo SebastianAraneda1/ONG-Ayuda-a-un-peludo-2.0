@@ -15,14 +15,18 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { FormsModule } from '@angular/forms';
 import { ModalAgregarComponent } from './components/modal-agregar/modal-agregar.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ModalEliminarComponent } from './components/modal-eliminar/modal-eliminar.component';
+import { AuthGuardService } from './guard/auth-guard';
 
 const routes: Routes = [
-  {path: 'inicio', component: InicioComponent},
-  {path: 'perros', component: PerrosComponent},
-  {path: 'gatos', component: GatosComponent},
-  {path: 'modal', component: FormAdopcionComponent},
-  {path: '', component: InicioComponent, pathMatch: 'full'},
-  {path: '**', redirectTo: 'inicio', pathMatch: 'full'}
+  {path: 'login', component: LoginComponent},
+  {path: 'registro', component: RegistroComponent},
+  {path: 'inicio', component: InicioComponent, canActivate: [AuthGuardService] },
+  {path: 'perros', component: PerrosComponent, canActivate: [AuthGuardService] },
+  {path: 'gatos', component: GatosComponent, canActivate: [AuthGuardService] },
+  {path: 'modal', component: FormAdopcionComponent, canActivate: [AuthGuardService] },
+  {path: '', component: LoginComponent, pathMatch: 'full'},
+  {path: '**', redirectTo: 'login', pathMatch: 'full'}
 
 ]
 
@@ -38,6 +42,7 @@ const routes: Routes = [
     LoginComponent,
     RegistroComponent,
     ModalAgregarComponent,
+    ModalEliminarComponent
   ],
 
   imports: [

@@ -1,0 +1,16 @@
+.formulario{
+    background-image: url('../../../assets/images/fondoLogin.jpg');
+    background-size: 100% 100vh auto;
+    text-align: center;
+    margin-top: 20vh;
+    width: 90vh;
+    border-radius: 5vh;
+    border-style: dotted;
+    .texto{
+        font-family: fantasy;
+    }
+    .btn{
+        background-color: rgb(230, 187, 47);
+        font-family: fantasy;
+    }
+}

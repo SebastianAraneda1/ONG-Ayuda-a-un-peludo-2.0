@@ -8,9 +8,11 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class SPerroService {
-  private apiUrl = 'http://localhost:3000/perros'
+  private apiUrl = 'http://localhost:3000/perros';
+  public perron: any;
 
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {}
 
   getPerros(): Observable<Array<Perro>> {
     return this.http.get<Array<Perro>>(this.apiUrl).pipe(map(response => response));
@@ -18,6 +20,10 @@ export class SPerroService {
 
   createPerro(post:Perro){
     return this.http.post(this.apiUrl, post);
+  }
+
+  deletePerro(id:number): Observable<{}>{
+    return this.http.delete<{}>(`http://localhost:3000/perros/${id}`);
   }
 
 }

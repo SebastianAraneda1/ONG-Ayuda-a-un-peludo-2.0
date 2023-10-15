@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class SGatoService {
   private apiUrl = 'http://localhost:3000/gatos'
+  public gaton:any;
 
   constructor(private http: HttpClient) { }
   
@@ -18,6 +19,10 @@ export class SGatoService {
 
   createGato(post:Gato){
     return this.http.post(this.apiUrl, post);
+  }
+
+   deleteGato(id:number): Observable<{}>{
+    return this.http.delete<{}>(`http://localhost:3000/gatos/${id}`);
   }
 
 }

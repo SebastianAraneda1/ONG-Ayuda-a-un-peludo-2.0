@@ -7,4 +7,23 @@ import { Component } from '@angular/core';
 })
 export class RegistroComponent {
 
+  formRegistro = {
+    user: "",
+    email: "",
+    pass: "",
+    rPass: ""
+  }
+
+  acuerdo:boolean = false;
+
+  showErrorUser:boolean = false;
+  showErrorEmail:boolean = false;
+  showErrorPass:boolean = false;
+
+  constructor(){}
+
+  registrar(){
+
+  }
+
 }
