@@ -9,21 +9,28 @@
   </div>
   <div class="cuerpo">
     <div class="modal-body">
+
       <div class="form-floating mb-3 mt-3">
         <input [(ngModel)]="formAgregarMascota.nombre" type="text" class="form-control" id="floatingInput" placeholder="Nombre">
         <label for="floatingInput" class="texto">Nombre</label>
         <span *ngIf="showNombreError" style="color: red;">Nombre invalido</span>
       </div>
-      <div class="form-floating mb-3 mt-3">
-        <input [(ngModel)]="formAgregarMascota.tipo" type="text" class="form-control" id="floatingInput" placeholder="Nombre">
-        <label for="floatingInput" class="texto">Tipo mascota</label>
-        <span *ngIf="showTipoError" style="color: red;">Tipo invalido</span>
+
+      <div class="form-floating mb-3">
+        <select name="Género" placeholder="" [(ngModel)]="formAgregarMascota.tipo">
+          <option value="" disabled selected>Tipo mascota</option>
+          <option value="Perro">Perro</option>
+          <option value="Gato">Gato</option>
+        </select>
+        <span *ngIf="showTipoError" style="color: red;">Seleccione Tipo</span>
       </div>
+
       <div class="form-floating mb-3">
         <input [(ngModel)]="formAgregarMascota.descripcion" type="text" class="form-control" id="floatingInput" placeholder="Descripcion">
         <label for="floatingInput" class="texto">Descripción</label>
         <span *ngIf="showDescripcionError" style="color: red;">Descripción corta</span>
       </div>
+
       <div class="form-floating mb-3">
         <select name="Género" placeholder="" [(ngModel)]="formAgregarMascota.genero">
           <option value="" disabled selected>Género</option>
@@ -32,20 +39,25 @@
         </select>
         <span *ngIf="showGeneroError" style="color: red;">Seleccione un género</span>
       </div>
+
       <div class="form-floating mb-3">
         <input [(ngModel)]="formAgregarMascota.raza" type="text" class="form-control" id="floatingInput" placeholder="Raza">
         <label for="floatingInput" class="texto">Raza</label>
         <span *ngIf="showRazaError" style="color: red;">Raza invalida</span>
       </div>
+
       <div class="form-floating mb-3">
         <input [(ngModel)]="formAgregarMascota.url" type="text" class="form-control" id="floatingInput" placeholder="Imagen">
         <label for="floatingInput" class="texto">Url de la foto del animal</label>
         <span *ngIf="showUrlErorr" style="color: red;">Url erronea</span>
       </div>
+
     </div>
+
     <div class="modal-footer">
       <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="cerrarModal()">Cancelar</button>
       <button type="button" class="btn btn-primary" (click)="guardarMascota()">Guardar mascota</button>
     </div>
+
   </div>
 </div>

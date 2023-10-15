@@ -17,6 +17,8 @@
         <input [(ngModel)]="formRegistro.email" type="email" class="form-control" id="floatingEmail" placeholder="Email">
         <label for="floatingEmail" class="texto">Email</label>
         <span *ngIf="showErrorEmail" style="color: red;">Email invalido</span>
+        <br>
+        <span *ngIf="showErrorDosEmail" style="color: red;">No puede ser admin</span>
       </div>
 
       <div class="form-floating mb-3">
@@ -28,6 +30,8 @@
         <input [(ngModel)]="formRegistro.rPass" type="password" class="form-control" id="floatingRPass" placeholder="Repetir Contraseña">
         <label for="floatingRPass" class="texto">Repetir Contraseña</label>
         <span *ngIf="showErrorPass" style="color: red;">Las contraseñas no coinciden</span>
+        <br>
+        <span *ngIf="showErrorDosPass" style="color: red;">Complete los campos</span>
       </div>
 
       <div class="mb-3 form-check">

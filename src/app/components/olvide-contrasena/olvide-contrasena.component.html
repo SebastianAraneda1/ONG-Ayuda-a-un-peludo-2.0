@@ -1,0 +1,15 @@
+<div class="container formulario" >
+
+  <h1 class="mt-5 titulo">¿Olvidaste tu contraseña?</h1>
+  <h3 class="mb-5 titulo">No te preocupes, ingresa tu dirección Email y te enviaremos un correo</h3>
+  
+  <div class="form-floating mb-3 mt-3">
+      <input [(ngModel)]="email" type="email" class="form-control" id="floatingEmail" placeholder="Email">
+      <label for="floatingEmail" class="texto">Email</label>
+      <span *ngIf="showErrorEmail" style="color: red;">Email invalido</span>
+  </div>
+
+  <button type="button" (click)="recuperar()" class="btn mb-2">Recuperar contraseña</button>
+  <br>
+  <a [routerLink]="['/login']" class="mb-3">Volver</a>
+</div>

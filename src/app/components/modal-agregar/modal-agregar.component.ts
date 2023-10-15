@@ -58,7 +58,7 @@ export class ModalAgregarComponent {
       nombreOk = false;
     }
 
-    if(this.formAgregarMascota.tipo.toLowerCase() == 'perro' || this.formAgregarMascota.tipo.toLowerCase() == 'gato'){
+    if(this.formAgregarMascota.tipo == 'Perro' || this.formAgregarMascota.tipo == 'Gato'){
       tipoOk = true;
       this.showTipoError = false;
     }else{
@@ -100,13 +100,13 @@ export class ModalAgregarComponent {
 
     if(nombreOk && tipoOk && descripcionOk && generoOk && razaOk && urlOk){
 
-      if(this.formAgregarMascota.tipo.toLowerCase() == "perro"){
+      if(this.formAgregarMascota.tipo == "Perro"){
         this.crearPerro();
         this.cerrarModal();
         this.route.navigate(['/inicio']);
       }
 
-      if(this.formAgregarMascota.tipo.toLowerCase() == "gato"){
+      if(this.formAgregarMascota.tipo == "Gato"){
         this.crearGato();
         this.cerrarModal();
         this.route.navigate(['/inicio']);

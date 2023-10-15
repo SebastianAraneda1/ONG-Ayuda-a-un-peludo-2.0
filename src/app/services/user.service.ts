@@ -31,4 +31,8 @@ export class UsuarioService{
         return this.usuarioLog.asObservable();
     }
 
+    createUser(post:UsuarioInterface){
+        return this.http.post(this.apiUrl, post);
+    }
+
 }

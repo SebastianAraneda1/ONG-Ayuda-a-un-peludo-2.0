@@ -17,10 +17,13 @@ import { ModalAgregarComponent } from './components/modal-agregar/modal-agregar.
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ModalEliminarComponent } from './components/modal-eliminar/modal-eliminar.component';
 import { AuthGuardService } from './guard/auth-guard';
+import { ModalActualizarComponent } from './components/modal-actualizar/modal-actualizar.component';
+import { OlvideContrasenaComponent } from './components/olvide-contrasena/olvide-contrasena.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'registro', component: RegistroComponent},
+  {path: 'olvidar', component: OlvideContrasenaComponent},
   {path: 'inicio', component: InicioComponent, canActivate: [AuthGuardService] },
   {path: 'perros', component: PerrosComponent, canActivate: [AuthGuardService] },
   {path: 'gatos', component: GatosComponent, canActivate: [AuthGuardService] },
@@ -42,7 +45,9 @@ const routes: Routes = [
     LoginComponent,
     RegistroComponent,
     ModalAgregarComponent,
-    ModalEliminarComponent
+    ModalEliminarComponent,
+    ModalActualizarComponent,
+    OlvideContrasenaComponent
   ],
 
   imports: [

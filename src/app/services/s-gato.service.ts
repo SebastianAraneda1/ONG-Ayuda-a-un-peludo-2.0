@@ -21,6 +21,10 @@ export class SGatoService {
     return this.http.post(this.apiUrl, post);
   }
 
+  updateGato(post:Gato){
+    return this.http.put(`http://localhost:3000/gatos/${post.id}`, post)
+  }
+
    deleteGato(id:number): Observable<{}>{
     return this.http.delete<{}>(`http://localhost:3000/gatos/${id}`);
   }
