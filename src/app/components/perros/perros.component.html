@@ -26,7 +26,7 @@
 
   </div>
   <div class="card-footer">
-    <button class="btn btn-success boton" type="button" *ngIf="botonesPerro">Adoptar</button>
+    <button class="btn btn-success boton" type="button" *ngIf="botonesPerro" (click)="abrirModalAdoptar(perro)">Adoptar</button>
     <button class="btn btn-info boton" type="button" *ngIf="!botonesPerro" (click)="abrirModalActualizar(perro)">Modificar</button>
     <button class="btn btn-danger boton" type="button" *ngIf="!botonesPerro" (click)="abrirModalEliminar()">Eliminar</button>
   </div>

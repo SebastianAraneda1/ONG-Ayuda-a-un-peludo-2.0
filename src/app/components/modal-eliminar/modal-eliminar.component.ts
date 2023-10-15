@@ -29,8 +29,7 @@ export class ModalEliminarComponent {
     this.perroService.getPerros().subscribe(
       (perros: Array<Perro>) => {
         let perro = perros.find(p => p.id);
-        if (perro?.tipo === "perro") {
-
+        if (perro?.tipo === "Perro") {
           const perro = this.perroService.perron;
           this.perroService.deletePerro(perro.id).subscribe({
             next: (resp: any) => {
@@ -44,7 +43,6 @@ export class ModalEliminarComponent {
               console.log(err);
             }
           });
-          
         }
       }
     )
@@ -52,8 +50,7 @@ export class ModalEliminarComponent {
     this.gatoService.getGatos().subscribe(
       (gatos: Array<Gato>) => {
         let gato = gatos.find(p => p.id);
-        if (gato?.tipo === "gato") {
-
+        if (gato?.tipo === "Gato") {
           const gato = this.gatoService.gaton;
           this.gatoService.deleteGato(gato.id).subscribe({
             next: (resp: any) => {
@@ -67,7 +64,6 @@ export class ModalEliminarComponent {
               console.log(err);
             }
           })
-
         }
       }
     )
