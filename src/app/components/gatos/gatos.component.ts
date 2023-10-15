@@ -5,6 +5,7 @@ import { UsuarioService } from 'src/app/services/user.service';
 import { ModalAgregarComponent } from '../modal-agregar/modal-agregar.component';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ModalEliminarComponent } from '../modal-eliminar/modal-eliminar.component';
+import { ModalActualizarComponent } from '../modal-actualizar/modal-actualizar.component';
 
 @Component({
   selector: 'app-gatos',
@@ -41,6 +42,12 @@ export class GatosComponent implements OnInit{
    // this.displayStyle = "block";
    this.modalRef = this.modalService.show(ModalAgregarComponent);
   }
+
+  abrirModalActualizar(gato: Gato){
+    this.gatoService.gaton = gato
+    this.modalRef = this.modalService.show(ModalActualizarComponent);
+  }
+
 
   abrirModalEliminar(gato: Gato){
     this.gatoService.gaton = gato;

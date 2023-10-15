@@ -22,8 +22,11 @@ export class SPerroService {
     return this.http.post(this.apiUrl, post);
   }
 
+  updatePerro(post:Perro){
+    return this.http.put(`http://localhost:3000/perros/${post.id}`, post)
+  }
+
   deletePerro(id:number): Observable<{}>{
     return this.http.delete<{}>(`http://localhost:3000/perros/${id}`);
   }
-
 }

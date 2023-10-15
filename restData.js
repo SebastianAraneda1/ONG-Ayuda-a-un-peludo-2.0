@@ -2,12 +2,14 @@ module.exports = function (){
     var data = {
         usuarios:[
             {
+                id: 1,
                 nombre: "Alan",
                 contrasena: "1234a",
                 email: "alan@user.com",
                 rol:"user"
             },
             {
+                id: 2,
                 nombre: "Leno",
                 contrasena: "abcd",
                 email: "leno@admin.com",
