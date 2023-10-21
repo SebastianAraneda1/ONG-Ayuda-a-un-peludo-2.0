@@ -48,7 +48,8 @@ export class PerrosComponent {
     this.modalRef = this.modalService.show(ModalActualizarComponent);
   }
 
-  abrirModalEliminar(){
+  abrirModalEliminar(perro: Perro){
+    this.perroService.perron = perro;
     this.modalRef = this.modalService.show(ModalEliminarComponent);
   }
 

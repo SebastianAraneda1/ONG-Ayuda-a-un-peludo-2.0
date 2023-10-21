@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { BsModalService } from 'ngx-bootstrap/modal';
-import { Gato } from 'src/app/interfaces/gato';
-import { Perro } from 'src/app/interfaces/perro';
 import { SGatoService } from 'src/app/services/s-gato.service';
 import { SPerroService } from 'src/app/services/s-perro.service';
 
