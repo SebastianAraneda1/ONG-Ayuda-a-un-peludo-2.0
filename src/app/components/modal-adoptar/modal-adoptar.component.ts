@@ -68,32 +68,40 @@ export class ModalAdoptarComponent {
 
     if(nombreOk && telefonoOk && rutOk){
 
-      const perro = this.perroService.perron;
-      this.perroService.deletePerro(perro.id).subscribe({
-        next: (resp: any) => {
-          this.cerrarModal();
-          alert('Mascota adoptada, tienes un plazo de 5 días para recogerla :)')
-          console.log(resp);
-          this.route.navigate(['/inicio'])
-        },
-        error: (err: any) => {
-          console.log(err);
-        }
-      });
+      if(this.perroService.perron){
+        let post = {
+          id: this.perroService.perron.id,
+          tipo: "Perro",
+          nombre: this.perroService.perron.nombre,
+          descripcion: this.perroService.perron.descripcion,
+          genero: this.perroService.perron.genero,
+          raza: this.perroService.perron.raza,
+          urlImg: this.perroService.perron.urlImg
+        };
+        this.perroService.deletePerro(post.id).subscribe({
+          next: (response) => {console.log(response)},
+          error: (error) => {console.log(error)}
+        })
+      }
       
-      
-      const gato = this.gatoService.gaton;
-      this.gatoService.deleteGato(gato.id).subscribe({
-        next: (resp: any) => {
-          this.cerrarModal();
-          alert('Mascota adoptada, tienes un plazo de 5 días para recogerla :)')
-          console.log(resp);
-          this.route.navigate(['/inicio'])
-        },
-        error: (err: any) => {
-          console.log(err);
-        }
-      });
+      if(this.gatoService.gaton){
+        let postGato = {
+          id: this.gatoService.gaton.id,
+          tipo: "Gato",
+          nombre: this.gatoService.gaton.nombre,
+          descripcion: this.gatoService.gaton.descripcion,
+          genero: this.gatoService.gaton.genero,
+          raza: this.gatoService.gaton.raza,
+          urlImg: this.gatoService.gaton.urlImg
+        };
+        this.gatoService.deleteGato(postGato.id).subscribe({
+          next: (response) => {console.log(response)},
+          error: (error) => {console.log(error)}
+        })
+      }
+      alert('Mascota Adoptada!! tienes un plazo de 5 días para recogerla');
+      this.cerrarModal();
+      this.route.navigate(['/inicio']);
     }
 
   }
