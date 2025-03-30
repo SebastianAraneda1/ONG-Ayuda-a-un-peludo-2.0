@@ -29,4 +29,10 @@ export class SPerroService {
   deletePerro(id:number): Observable<{}>{
     return this.http.delete<{}>(`http://localhost:3000/perros/${id}`);
   }
+
+  // solicitarAdopcion(id: number, perros: Array<Perro>): Array<Perro>{
+  //   const index = perros.findIndex((perro: Perro) => perro.id === id);
+  //   perros[index].procesoAdopcion = true;
+  //   return perros;
+  // }
 }

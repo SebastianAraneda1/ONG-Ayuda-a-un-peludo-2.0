@@ -14,6 +14,11 @@ export class AppComponent implements OnInit{
   constructor(private userService:UsuarioService){}
 
   ngOnInit():void{
+    let logeado = localStorage.getItem("logeo");
+    if(logeado){
+      this.mostrar = logeado === "true";
+      return;
+    }
     this.userService.getLogStatus().subscribe(logStatus => {
       this.mostrar = logStatus;
       console.log(this.userService.usuario);

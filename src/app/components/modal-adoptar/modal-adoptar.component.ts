@@ -76,9 +76,11 @@ export class ModalAdoptarComponent {
           descripcion: this.perroService.perron.descripcion,
           genero: this.perroService.perron.genero,
           raza: this.perroService.perron.raza,
-          urlImg: this.perroService.perron.urlImg
+          urlImg: this.perroService.perron.urlImg,
+          procesoAdopcion: true,
+          adoptado: false
         };
-        this.perroService.deletePerro(post.id).subscribe({
+        this.perroService.updatePerro(post).subscribe({
           next: (response) => {console.log(response)},
           error: (error) => {console.log(error)}
         })
@@ -92,14 +94,16 @@ export class ModalAdoptarComponent {
           descripcion: this.gatoService.gaton.descripcion,
           genero: this.gatoService.gaton.genero,
           raza: this.gatoService.gaton.raza,
-          urlImg: this.gatoService.gaton.urlImg
+          urlImg: this.gatoService.gaton.urlImg,
+          procesoAdopcion: true,
+          adoptado: false
         };
-        this.gatoService.deleteGato(postGato.id).subscribe({
+        this.gatoService.updateGato(postGato).subscribe({
           next: (response) => {console.log(response)},
           error: (error) => {console.log(error)}
         })
       }
-      alert('Mascota Adoptada!! tienes un plazo de 5 días para recogerla');
+      alert('Solicitud de adopcion enviada!');
       this.cerrarModal();
       this.route.navigate(['/inicio']);
     }

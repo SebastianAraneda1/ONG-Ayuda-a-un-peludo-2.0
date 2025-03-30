@@ -4,31 +4,33 @@
 <h1 class="titulo" *ngIf="!botonesGato">Pagina de gatos</h1>
 <h3 class="parrafo" *ngIf="!botonesGato">Bienvenido administrador, a continuación podra modificar, eliminar o agregar un gato</h3>
 
-<div *ngFor="let gato of gatos" class="container card mt-5 mb-5">
-  <p>N°{{gato.id}}</p>
-  <div class="card-header">
-    <h2>{{gato.nombre}}</h2>
-  </div>
-  <div class="card-body">
-
-    <div style="display: flex; align-items: center;">
-
-      <img class="imageGatos" src={{gato.urlImg}}>
-      
-      <div class="contenido" style="margin-left: 10px;">
-        <p class="info">{{gato.descripcion}}</p>
-        <h5 class="info">Género: {{gato.genero}}</h5>
-        <h5 class="info">Raza: {{gato.raza}}</h5>
-
-      </div>
-
+<div *ngFor="let gato of gatos">
+  <div *ngIf="!gato.procesoAdopcion && !gato.adoptado"  class="container card mt-5 mb-5">
+    <p>N°{{gato.id}}</p>
+    <div class="card-header">
+      <h2>{{gato.nombre}}</h2>
     </div>
-
-  </div>
-  <div class="card-footer">
-    <button class="btn btn-success boton" type="button" *ngIf="botonesGato" (click)="abrirModalAdoptar(gato)">Adoptar</button>
-    <button class="btn btn-info boton" type="button" *ngIf="!botonesGato" (click)="abrirModalActualizar(gato)">Modificar</button>
-    <button class="btn btn-danger boton" type="button" *ngIf="!botonesGato" (click)="abrirModalEliminar(gato)">Eliminar</button>
+    <div class="card-body">
+  
+      <div style="display: flex; align-items: center;">
+  
+        <img class="imageGatos" src={{gato.urlImg}}>
+        
+        <div class="contenido" style="margin-left: 10px;">
+          <p class="info">{{gato.descripcion}}</p>
+          <h5 class="info">Género: {{gato.genero}}</h5>
+          <h5 class="info">Raza: {{gato.raza}}</h5>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-success boton" type="button" *ngIf="botonesGato" (click)="abrirModalAdoptar(gato)">Adoptar</button>
+      <button class="btn btn-info boton" type="button" *ngIf="!botonesGato" (click)="abrirModalActualizar(gato)">Modificar</button>
+      <button class="btn btn-danger boton" type="button" *ngIf="!botonesGato" (click)="abrirModalEliminar(gato)">Eliminar</button>
+    </div>
   </div>
 </div>
 

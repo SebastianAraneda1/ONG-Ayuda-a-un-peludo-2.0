@@ -6,4 +6,6 @@ export interface Perro {
     raza: string;
     urlImg:string;
     descripcion:string;
+    procesoAdopcion:boolean;
+    adoptado:boolean;
 }

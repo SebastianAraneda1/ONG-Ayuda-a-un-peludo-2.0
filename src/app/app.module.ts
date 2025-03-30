@@ -20,6 +20,7 @@ import { AuthGuardService } from './guard/auth-guard';
 import { ModalActualizarComponent } from './components/modal-actualizar/modal-actualizar.component';
 import { OlvideContrasenaComponent } from './components/olvide-contrasena/olvide-contrasena.component';
 import { ModalAdoptarComponent } from './components/modal-adoptar/modal-adoptar.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'inicio', component: InicioComponent, canActivate: [AuthGuardService] },
   {path: 'perros', component: PerrosComponent, canActivate: [AuthGuardService] },
   {path: 'gatos', component: GatosComponent, canActivate: [AuthGuardService] },
+  {path: 'reportes', component: ReportesComponent, canActivate: [AuthGuardService] },
   {path: 'modal', component: FormAdopcionComponent, canActivate: [AuthGuardService] },
   {path: '', component: LoginComponent, pathMatch: 'full'},
   {path: '**', redirectTo: 'login', pathMatch: 'full'}
@@ -49,7 +51,8 @@ const routes: Routes = [
     ModalEliminarComponent,
     ModalActualizarComponent,
     OlvideContrasenaComponent,
-    ModalAdoptarComponent
+    ModalAdoptarComponent,
+    ReportesComponent
   ],
 
   imports: [

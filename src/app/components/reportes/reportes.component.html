@@ -1,0 +1,75 @@
+<div class="container">
+    <div>
+        <h1 class="titulo">Reportes</h1>
+        <h3 class="parrafo">Reporte de mascotas adoptadas</h3>
+    </div>
+    <div>
+        <h2 style="color: black;">Total Mascotas adoptadas: {{perrosAdoptados + gatosAdoptados}}</h2>
+        <h2 style="color: black;">Perros adoptados: {{perrosAdoptados}}</h2>
+        <h2 style="color: black;">Gatos adoptados: {{gatosAdoptados}}</h2>
+    </div>
+    <div>
+        <h2 style="color: black;">Solicitudes pendientes de adopoción: {{solicitudesPendientes}}</h2>
+        <h2 style="color: black;">PERROS</h2>
+        <div *ngFor="let perro of perros" >
+            <div *ngIf="perro.procesoAdopcion" class="container card mt-5 mb-5">
+              <p>N°{{perro.id}}</p>
+              <div class="card-header">
+                <h2>{{perro.nombre}}</h2>
+              </div>
+              <div class="card-body">
+            
+                <div style="display: flex; align-items: center;">
+            
+                  <img class="imagePerros" src={{perro.urlImg}}>
+                  
+                  <div class="contenido" style="margin-left: 10px;">
+                    <p class="info">{{perro.descripcion}}</p>
+                    <h5 class="info">Género: {{perro.genero}}</h5>
+                    <h5 class="info">Raza: {{perro.raza}}</h5>
+            
+                  </div>
+            
+                </div>
+            
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-success boton" type="button" (click)="aceptarSolicitudPerro(perro)">Aceptar</button>
+                <button class="btn btn-danger boton" type="button" (click)="rechazarSolicitudPerro(perro)">Rechazar</button>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div>
+        <h2 style="color: black;">GATOS</h2>
+        <div *ngFor="let gato of gatos">
+            <div *ngIf="gato.procesoAdopcion" class="container card mt-5 mb-5">
+              <p>N°{{gato.id}}</p>
+              <div class="card-header">
+                <h2>{{gato.nombre}}</h2>
+              </div>
+              <div class="card-body">
+            
+                <div style="display: flex; align-items: center;">
+            
+                  <img class="imagePerros" src={{gato.urlImg}}>
+                  
+                  <div class="contenido" style="margin-left: 10px;">
+                    <p class="info">{{gato.descripcion}}</p>
+                    <h5 class="info">Género: {{gato.genero}}</h5>
+                    <h5 class="info">Raza: {{gato.raza}}</h5>
+            
+                  </div>
+            
+                </div>
+            
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-success boton" type="button" (click)="aceptarSolicitudGato(gato)">Aceptar</button>
+                <button class="btn btn-danger boton" type="button" (click)="rechazarSolicitudGato(gato)">Rechazar</button>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>

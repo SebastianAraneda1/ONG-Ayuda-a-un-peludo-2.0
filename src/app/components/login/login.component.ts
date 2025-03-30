@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent  {
 
   public email = "";
   public pass = "";
@@ -31,7 +31,8 @@ export class LoginComponent {
             this.existe = true;
             console.log("Existe");
             this.userService.usuario = usuario;
-            this.userService.setLogStatus(true);
+            this.userService.setLogStatus(true)
+            localStorage.setItem("logeo", "true");
             this.route.navigate(['/inicio']);
           }
 

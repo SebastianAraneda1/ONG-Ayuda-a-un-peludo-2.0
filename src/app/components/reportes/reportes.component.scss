@@ -1,0 +1,69 @@
+.titulo{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.parrafo{
+    color: rgb(30, 45, 46);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2{
+    color: wheat;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h5, p{
+    color: #eef3a7;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*.card{
+    color: rgb(102, 62, 1) !important;
+}*/
+.card {
+    width: 100vh;
+    border: 1px solid #75611d;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #2e3106;
+    background-image: url("../../../assets/images/fondo_adopcion.jpg");
+    background-repeat: round;
+    background-size: cover;
+}
+
+.card-header {
+    padding: 10px;
+    background-color: #504126;
+    text-align: center;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.imagePerros{
+    width: 40vh;
+    border-radius: 5vh;
+    border: 3px solid;
+}
+
+.contenido{
+    background-color:#504126;
+    .info{
+    margin-left: 4vh;
+    } 
+    border-radius: 20px;
+}
+
+.boton{
+    border-style: double;
+    border-radius: 2vh;
+    border-color: black;
+}

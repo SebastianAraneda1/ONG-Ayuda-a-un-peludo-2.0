@@ -15,10 +15,12 @@ export class AuthGuardService implements CanActivate {
     ){}
 
     canActivate(): boolean {
-        if (!this.userService.logStatus) {
-            this.router.navigate(['login']);
-            return false;
-        }
-        return true;
+
+        let logeado = localStorage.getItem("logeo");
+        // if (!this.userService.logStatus) {
+        //     this.router.navigate(['login']);
+        //     return false;
+        // }
+        return logeado === "true";
     }
 }

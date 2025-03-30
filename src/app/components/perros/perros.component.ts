@@ -27,7 +27,10 @@ export class PerrosComponent {
     ) {}
   
   ngOnInit(): void {
-    this.perroService.getPerros().subscribe((perro)=> (this.perros = perro));
+    this.perroService.getPerros().subscribe((perro)=> {
+      this.perros = perro;
+      localStorage.setItem("perro", JSON.stringify(this.perros));
+    });
     if(this.usuarioService.usuario.rol == 'user'){
       this.botonesPerro = true;
     }

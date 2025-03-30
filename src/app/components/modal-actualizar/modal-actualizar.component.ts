@@ -18,7 +18,9 @@ export class ModalActualizarComponent {
         descripcion: "",
         genero: "",
         raza: "",
-        url: ""
+        url: "",
+        procesoAdopcion: false,
+        adoptado: false
     }
 
     showNombreError:boolean = false;
@@ -115,7 +117,9 @@ export class ModalActualizarComponent {
             descripcion: this.formActualizarMascota.descripcion,
             genero: this.formActualizarMascota.genero,
             raza: this.formActualizarMascota.raza,
-            urlImg: this.formActualizarMascota.url
+            urlImg: this.formActualizarMascota.url,
+            procesoAdopcion: false,
+            adoptado: false
         };
         this.perroService.updatePerro(post).subscribe({
             next: (response) => {console.log(response)},
@@ -133,7 +137,9 @@ export class ModalActualizarComponent {
             descripcion: this.formActualizarMascota.descripcion,
             genero: this.formActualizarMascota.genero,
             raza: this.formActualizarMascota.raza,
-            urlImg: this.formActualizarMascota.url
+            urlImg: this.formActualizarMascota.url,
+            procesoAdopcion: false,
+            adoptado: false
         };
         this.gatoService.updateGato(post).subscribe({
             next: (response) => {console.log(response)},

@@ -10,10 +10,15 @@ import { UsuarioService } from 'src/app/services/user.service';
 export class EncabezadoComponent {
 
   nombre:string = "";
+  esAdmin: boolean = false;
 
   constructor(private usuarioService:UsuarioService, private route:Router){}
 
   ngOnInit():void{
+    
+    this.esAdmin = this.usuarioService.usuario.rol === "admin";
+
+    
     if(this.usuarioService.usuario.rol == 'user'){
       this.nombre = 'cliente ' + this.usuarioService.usuario.nombre;
     }
@@ -23,6 +28,7 @@ export class EncabezadoComponent {
   }
 
   cerrarSesion(){
+    localStorage.removeItem("logeo");
     this.usuarioService.setLogStatus(false);
     this.route.navigate(['/'])
   }

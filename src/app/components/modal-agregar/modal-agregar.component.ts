@@ -126,7 +126,9 @@ export class ModalAgregarComponent {
       descripcion: this.formAgregarMascota.descripcion,
       genero: this.formAgregarMascota.genero,
       raza: this.formAgregarMascota.raza,
-      urlImg: this.formAgregarMascota.url
+      urlImg: this.formAgregarMascota.url,
+      procesoAdopcion: false,
+      adoptado: false
     };
     this.perroService.createPerro(post).subscribe({
       next: (response) => {console.log(response)},
@@ -141,7 +143,9 @@ export class ModalAgregarComponent {
       descripcion: this.formAgregarMascota.descripcion,
       genero: this.formAgregarMascota.genero,
       raza: this.formAgregarMascota.raza,
-      urlImg: this.formAgregarMascota.url
+      urlImg: this.formAgregarMascota.url,
+      procesoAdopcion: false,
+      adoptado: false
     };
     this.gatoService.createGato(post).subscribe({
       next: (response) => {console.log(response)},
