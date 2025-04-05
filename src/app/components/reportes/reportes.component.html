@@ -12,7 +12,7 @@
         <h2 style="color: black;">Solicitudes pendientes de adopoción: {{solicitudesPendientes}}</h2>
         <h2 style="color: black;">PERROS</h2>
         <div *ngFor="let perro of perros" >
-            <div *ngIf="perro.procesoAdopcion" class="container card mt-5 mb-5">
+            <div *ngIf="perro.procesoAdopcion == true" class="container card mt-5 mb-5">
               <p>N°{{perro.id}}</p>
               <div class="card-header">
                 <h2>{{perro.nombre}}</h2>
@@ -44,7 +44,7 @@
     <div>
         <h2 style="color: black;">GATOS</h2>
         <div *ngFor="let gato of gatos">
-            <div *ngIf="gato.procesoAdopcion" class="container card mt-5 mb-5">
+            <div *ngIf="gato.procesoAdopcion == true" class="container card mt-5 mb-5">
               <p>N°{{gato.id}}</p>
               <div class="card-header">
                 <h2>{{gato.nombre}}</h2>

@@ -30,7 +30,7 @@ export class EncabezadoComponent {
   cerrarSesion(){
     localStorage.removeItem("logeo");
     this.usuarioService.setLogStatus(false);
-    this.route.navigate(['/'])
+    this.route.navigate(['/login'])
   }
 
 }

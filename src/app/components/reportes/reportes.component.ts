@@ -57,7 +57,8 @@ export class ReportesComponent implements OnInit{
     perro.adoptado = true;
     perro.procesoAdopcion = false;
     this.perroService.updatePerro(perro).subscribe(resp =>{
-      window.location.reload();
+      perro.procesoAdopcion = false;
+      alert("Solicitud aprobada!!")
     });
 
   }
@@ -65,7 +66,8 @@ export class ReportesComponent implements OnInit{
   aceptarSolicitudGato(gato: Gato): void{
     gato.adoptado = true;
     gato.procesoAdopcion = false;
-    this.perroService.updatePerro(gato).subscribe(resp =>{
+    this.gatoService.updateGato(gato).subscribe(resp =>{
+      gato.procesoAdopcion = false;
       alert("Solicitud aprobada!!")
     });
   }
@@ -74,6 +76,7 @@ export class ReportesComponent implements OnInit{
     perro.adoptado = false;
     perro.procesoAdopcion = false;
     this.perroService.updatePerro(perro).subscribe(resp =>{
+      perro.procesoAdopcion = false;
       alert("Solicitud rechazada")
     });
   }
@@ -81,7 +84,8 @@ export class ReportesComponent implements OnInit{
   rechazarSolicitudGato(gato: Gato): void{
     gato.adoptado = false;
     gato.procesoAdopcion = false;
-    this.perroService.updatePerro(gato).subscribe(resp =>{
+    this.gatoService.updateGato(gato).subscribe(resp =>{
+      gato.procesoAdopcion = false;
       alert("Solicitud rechazada")
     });
   }
